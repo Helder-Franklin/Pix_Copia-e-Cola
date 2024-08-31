@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pix Copiado com Sucesso!</title>
+    <title>Código copiado com sucesso!</title>
     <style>
         /* Estilos para o alerta */
         #alerta {
@@ -40,6 +40,33 @@
             background-color: #ff0000;
             transition: width 3s linear;
         }
+        .myButton {
+          box-shadow: 3px 4px 0px 0px #899599;
+          background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+          background-color:#ededed;
+          border-radius:15px;
+          border: 1px solid #d6bcd6;
+          display:flex;
+          cursor:pointer;
+          color:#3a8a9e;
+          font-family:Arial;
+          font-size:17px;
+          padding: 20px;
+          text-align: center;
+          text-decoration:none;
+          text-shadow:0px 1px 0px #e1e2ed;
+          max-width: 200px;
+          justify-content: center;
+          margin-left: 20vw;
+        }
+        .myButton:hover {
+          background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+          background-color:#bab1ba;
+        }
+        .myButton:active {
+          position:relative;
+          top:1px;
+        }
     </style>
 </head>
 <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #291956; color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh;">
@@ -55,7 +82,13 @@
     <div style="text-align: center; padding: 20px; border: 2px solid #f0f0f0; border-radius: 10px;">
       <h1 style="font-size: 2.5em; margin-bottom: 10px;">Muito obrigado!</h1>
       <p style="font-size: 1.2em; color: #d0d0d0;">Por favor: Atualize o valor de acordo com o N° de Cotas desejado e nos envie o comprovante.</p>
+
+      <div style="text-align: center; margin-top: 20px;">
+        <a href="https://jovenssaradosrp.com.br/rifa" class="myButton">Voltar para o site</a>
+      </div>
   </div>
+
+    
     
     <script>
         async function copiarERedirecionar() {
