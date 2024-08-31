@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiar Texto e Redirecionar</title>
+    <style>
+        /* Estilos para o alerta */
+        #alerta {
+            display: none;
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            text-align: center;
+            font-size: 18px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        /* Estilo da barra de progresso */
+        #barra-progresso {
+            margin-top: 10px;
+            width: 100%;
+            height: 5px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        #barra-carregando {
+            width: 100%;
+            height: 100%;
+            background-color: #ff0000;
+            transition: width 3s linear;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #291956; color: #f0f0f0; display: flex; justify-content: center; align-items: center; height: 100vh;">
+
+    <!-- Alerta de cópia bem-sucedida -->
+    <div id="alerta">
+        Código copiado com sucesso!
+        <div id="barra-progresso">
+            <div id="barra-carregando"></div>
+        </div>
+    </div>
+
+    <div style="text-align: center; padding: 20px; border: 2px solid #f0f0f0; border-radius: 10px;">
+      <h1 style="font-size: 2.5em; margin-bottom: 10px;">Muito obrigado!</h1>
+      <p style="font-size: 1.2em; color: #d0d0d0;">Por favor: Atualize o valor de acordo com o N° de Cotas desejado e nos envie o comprovante.</p>
+  </div>
+    
+    <script>
+        async function copiarERedirecionar() {
+            // Texto que você deseja copiar
+            var texto = "00020126580014br.gov.bcb.pix0136143504f0-2c87-443a-8c84-f194b79b839a27600016BR.COM.PAGSEGURO0136730CE6EC-226C-4243-AAB5-E30EEAB507F05204000053039865802BR5925Jose Lucas da Conceicao G6014Ribeirao Preto62290525PAGS0000000002408301629946304D583";
+
+            try {
+                // Usa a API Clipboard para copiar o texto
+                await navigator.clipboard.writeText(texto);
+                console.log("Texto copiado para a área de transferência: " + texto);
+
+                // Exibe o alerta com efeito de transição
+                var alerta = document.getElementById("alerta");
+                var barraCarregando = document.getElementById("barra-carregando");
+
+                alerta.style.display = "block";
+                setTimeout(function() {
+                    alerta.style.opacity = "1";
+                }, 100);
+
+                // Inicia a barra de progresso
+                barraCarregando.style.width = "0";
+
+                // Após 3 segundos, redireciona para a nova URL
+                setTimeout(function() {
+                    window.location.href = "https://jovenssaradosrp.com.br/rifa";
+                }, 3000);
+
+            } catch (err) {
+                console.error("Erro ao copiar o texto: ", err);
+            }
+        }
+
+        // Executa a função quando a página é carregada
+        window.onload = copiarERedirecionar;
+    </script>
+</body>
+</html>
